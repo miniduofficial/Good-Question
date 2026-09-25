@@ -6,7 +6,7 @@ import Home from '/private/tmp/good-question-page.mjs';
 const css = fs
   .readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8')
   .replace("@import 'tailwindcss';", '')
-  .replaceAll("url('/art/", "url('/public/art/");
+  .replaceAll("url('/art/", "url('./public/art/");
 
 const page = `<!doctype html>
 <html lang="en">
@@ -19,4 +19,4 @@ const page = `<!doctype html>
 <body>${renderToStaticMarkup(React.createElement(Home))}</body>
 </html>`;
 
-fs.writeFileSync(new URL('../preview.html', import.meta.url), page);
+fs.writeFileSync(new URL('../index.html', import.meta.url), page);
