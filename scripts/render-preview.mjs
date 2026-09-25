@@ -1,22 +1,7 @@
+// The GitHub Pages prototype is authored in index.html and public/learning.*.
+// Keep the older React landing-page experiment in app/ from overwriting it.
 import fs from 'node:fs';
-import React from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
-import Home from '/private/tmp/good-question-page.mjs';
-
-const css = fs
-  .readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8')
-  .replace("@import 'tailwindcss';", '')
-  .replaceAll("url('/art/", "url('./public/art/");
-
-const page = `<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Good Question — An Academy for the Curious</title>
-  <style>${css}</style>
-</head>
-<body>${renderToStaticMarkup(React.createElement(Home))}</body>
-</html>`;
-
-fs.writeFileSync(new URL('../index.html', import.meta.url), page);
+for (const path of ['../index.html', '../public/learning.css', '../public/learning.js']) {
+ fs.accessSync(new URL(path, import.meta.url));
+}
+console.log('Static prototype ready. Serve the repository root and open index.html.');
