@@ -2,7 +2,7 @@
 document.querySelector('.skip').addEventListener('click', event => {
  event.preventDefault(); document.querySelector('#main').focus();
 });
-const titles = {home:'Find your next lesson',mathematics:'O/L Mathematics','zero-power':'Why is a⁰ = 1?',tutoring:'Tutoring & practice'};
+const titles = {home:'Find your next lesson',mathematics:'O/L Mathematics','zero-power':'Why is a⁰ = 1?',tutoring:'Tutoring & practice',library:'Library'};
 const videoPlaceholder = document.querySelector('#video-container').innerHTML;
 function bindVideo() {
  document.querySelector('#video-container').classList.add('video-placeholder');
@@ -20,7 +20,8 @@ function route(focus = true) {
  const view = Object.hasOwn(titles, requested) ? requested : 'home';
  document.querySelectorAll('[data-view]').forEach(section => { section.hidden = section.dataset.view !== view; });
  document.querySelectorAll('[data-nav]').forEach(link => {
-  if (link.dataset.nav === (view === 'tutoring' ? 'tutoring' : 'home')) link.setAttribute('aria-current','page'); else link.removeAttribute('aria-current');
+  const activeNav = view === 'library' ? 'library' : view === 'tutoring' ? 'tutoring' : 'home';
+  if (link.dataset.nav === activeNav) link.setAttribute('aria-current','page'); else link.removeAttribute('aria-current');
  });
  document.title = titles[view] + ' — Good Question';
  if (view !== 'zero-power' && document.querySelector('#video-container iframe')) { document.querySelector('#video-container').innerHTML = videoPlaceholder; bindVideo(); }

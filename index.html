@@ -1,15 +1,18 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Good Question — Find your next lesson</title>
     <meta
       name="description"
-      content="Free explanations, videos and practice for O/L and A/L learning.">
-    <link rel="icon" href="./public/favicon.svg">
-    <link rel="stylesheet" href="./public/learning.css">
+      content="Free explanations, videos and practice for O/L and A/L learning."
+    />
+    <link rel="icon" href="./public/favicon.svg" />
+    <link rel="stylesheet" href="./public/learning.css" />
+    <link rel="stylesheet" href="./public/library.css" />
     <script defer src="./public/learning.js"></script>
+    <script defer src="./public/library.js"></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -21,6 +24,7 @@
         </a>
         <nav aria-label="Main navigation">
           <a href="#home" data-nav="home">Subjects</a>
+          <a href="#library" data-nav="library">Library</a>
           <a href="#tutoring" data-nav="tutoring">Tutoring</a>
         </nav>
         <span class="preview-label">Early preview</span>
@@ -33,12 +37,12 @@
             <p class="eyebrow">A little curiosity goes a long way</p>
             <h1>
               Understand it.
-              <br>
+              <br />
               <em>Then make it yours.</em>
             </h1>
             <p class="lead">
               Free lessons for O/L and A/L learning.
-              <br>
+              <br />
               Clear explanations, videos, and a chance to try it yourself.
             </p>
             <p class="quiet">Start learning below. No account needed.</p>
@@ -46,7 +50,8 @@
           <figure class="academy">
             <img
               src="./public/art/good-question-academy.png"
-              alt="Pixel-art academy in a sunlit landscape">
+              alt="Pixel-art academy in a sunlit landscape"
+            />
             <figcaption>A place for good questions.</figcaption>
           </figure>
         </div>
@@ -65,7 +70,7 @@
             </div>
             <label class="search">
               Find a subject or lesson
-              <input id="search" type="search" placeholder="Try “indices” or “mathematics”">
+              <input id="search" type="search" placeholder="Try “indices” or “mathematics”" />
             </label>
           </div>
           <p id="results-note" class="quiet" role="status">O/L · 1 sample subject</p>
@@ -78,7 +83,7 @@
               <h3>Mathematics</h3>
               <p>
                 Go beyond remembering a rule.
-                <br>
+                <br />
                 Understand why it works.
               </p>
               <div class="card-bottom">
@@ -123,7 +128,7 @@
             <h1>Mathematics</h1>
             <p class="lead">
               Understand the idea. Work through an example.
-              <br>
+              <br />
               Check it makes sense.
             </p>
           </div>
@@ -191,7 +196,7 @@
             <p class="quiet">One lesson available in this sample.</p>
             <div class="sidebar-note">
               Free to learn.
-              <br>
+              <br />
               No account needed.
             </div>
           </aside>
@@ -331,7 +336,7 @@
           <p class="eyebrow">More help, when you need it</p>
           <h1>
             Learn freely.
-            <br>
+            <br />
             <em>Go further with support.</em>
           </h1>
           <p class="lead">
@@ -386,7 +391,134 @@
           </p>
         </div>
       </section>
+
+      <section data-view="library" hidden class="shell content-page">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="#home">Subjects</a>
+          <span>/</span>
+          <span>Library</span>
+        </nav>
+        <div class="library-heading">
+          <p class="eyebrow">Your study shelf</p>
+          <h1>
+            A little clarity.
+            <br />
+            <em>Whenever you need it.</em>
+          </h1>
+          <p class="lead">Read theory notes freely. Find model papers for more practice.</p>
+          <p class="quiet">Theory needs no account. Model papers will be part of paid access.</p>
+        </div>
+        <div class="library-filters">
+          <label>
+            Qualification
+            <select id="library-level">
+              <option value="all">All qualifications</option>
+              <option value="ol">O/L</option>
+              <option value="al">A/L</option>
+            </select>
+          </label>
+          <label>
+            Subject
+            <select id="library-subject">
+              <option value="all">All subjects</option>
+              <option value="mathematics">Mathematics</option>
+            </select>
+          </label>
+          <label class="library-search">
+            Search the library
+            <input id="library-search" type="search" placeholder="Try “indices” or “model paper”" />
+          </label>
+        </div>
+        <div class="library-types" role="group" aria-label="Resource type">
+          <button data-resource-type="all" aria-pressed="true">Everything</button>
+          <button data-resource-type="theory" aria-pressed="false">Theory notes · Free</button>
+          <button data-resource-type="paper" aria-pressed="false">Model papers · Paid</button>
+        </div>
+        <p id="library-count" class="quiet" role="status">2 placeholder resources</p>
+        <div class="resource-grid">
+          <article
+            class="resource-card"
+            data-resource="theory"
+            data-keywords="indices zero exponent powers mathematics theory notes"
+          >
+            <div class="resource-cover theory-cover" aria-hidden="true">
+              <span class="cover-label">GOOD QUESTION / THEORY NOTES</span>
+              <strong>
+                Theory
+                <br />
+                notes.
+              </strong>
+              <span class="cover-formula">Indices</span>
+            </div>
+            <div class="resource-body">
+              <div class="resource-meta">
+                <span class="tag">Free · No account</span>
+                <span>O/L · Mathematics</span>
+              </div>
+              <h2>Indices — theory notes</h2>
+              <p>A place for your topic explanations, key ideas, and worked examples.</p>
+              <p class="quiet">Placeholder · Notes have not been uploaded yet</p>
+              <button class="secondary" disabled>Notes coming soon</button>
+            </div>
+          </article>
+          <article
+            class="resource-card"
+            data-resource="paper"
+            data-keywords="mathematics model paper practice exam paid"
+          >
+            <div class="resource-cover paper-cover" aria-hidden="true">
+              <span class="cover-label">GOOD QUESTION / MODEL PAPERS</span>
+              <strong>
+                Put your
+                <br />
+                thinking to work.
+              </strong>
+              <span class="cover-formula">Paper 01</span>
+            </div>
+            <div class="resource-body">
+              <div class="resource-meta">
+                <span class="tag paid-tag">Locked · Paid access</span>
+                <span>O/L · Mathematics</span>
+              </div>
+              <h2>Mathematics model paper 01</h2>
+              <p>A place for a full practice paper and its worked explanations.</p>
+              <p class="quiet">Planned resource · Sample listing, not yet uploaded</p>
+              <button class="secondary" id="paper-access">View access details</button>
+            </div>
+          </article>
+        </div>
+        <div class="empty" id="library-empty" hidden>
+          <h2>No resources match yet.</h2>
+          <p>This preview has placeholder listings for O/L Mathematics notes and a model paper.</p>
+          <button class="secondary" id="library-reset">Clear filters</button>
+        </div>
+        <aside class="library-policy">
+          <h2>The theory stays open.</h2>
+          <p>
+            Theory notes will be free to read without signing in. Paid model papers and worked
+            solutions will require an account with access. The complete library is still being
+            prepared.
+          </p>
+        </aside>
+      </section>
     </main>
+
+    <dialog id="paper-dialog" aria-labelledby="paper-dialog-title">
+      <div class="dialog-heading">
+        <span class="tag paid-tag">Paid resource · Planned</span>
+        <button class="dialog-close" id="close-paper" aria-label="Close access details">×</button>
+      </div>
+      <h2 id="paper-dialog-title">Model papers, with more support.</h2>
+      <p>Full model papers and worked explanations will be included in paid access.</p>
+      <p>
+        This is a preview of the library. The paper has not been uploaded, and purchasing and
+        account access are not available yet.
+      </p>
+      <div class="dialog-actions">
+        <a class="primary" href="#zero-power" id="dialog-free-note">Try the existing free lesson</a>
+        <button class="secondary" id="dismiss-paper">Back to library</button>
+      </div>
+    </dialog>
     <footer class="shell">
       <a class="brand" href="#home">
         Good Question
